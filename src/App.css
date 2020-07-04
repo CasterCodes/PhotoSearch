@@ -1,38 +1,198 @@
-.App {
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: rgba(241, 243, 248, 0.8);
+}
+.container {
+  width: 80%;
+  margin: auto;
+}
+.navbar {
+  background-color: white;
+  color: rgba(56, 61, 83, 0.8);
+}
+.navbar .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-brand {
+  font-size: 1rem;
+  text-decoration: none;
+  color: rgba(56, 61, 83, 0.8);
+  font-weight: bold;
+}
+.navbar .nav-links {
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  list-style-type: none;
+}
+.nav-links .nav-item {
+  font-size: 0.7rem;
+}
+.nav-item .nav-a {
+  color: rgba(56, 61, 83, 0.8);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+
+/* BANNER */
+.banner {
+  background-image: url("./images/image.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: none;
+}
+.banner .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  height: 90vh;
+}
+.banner h2 {
+  color: white;
+  font-size: 2rem;
+  line-height: 1;
+  margin-bottom: 5px;
+}
+.banner p {
+  color: white;
+  font-size: 1rem;
+  line-height: 1;
+  margin-bottom: 15px;
+}
+.banner form {
+  width: 100%;
+  margin-top: 5px;
+  position: relative;
+}
+.banner form input {
+  max-width: 60%;
+  width: 600px;
+  padding: 14px 10px;
+  outline: none;
+  border: none;
+  font-size: 16px;
+  border-radius: 3px;
+  position: relative;
+}
+.banner form button {
+  background-color: rgba(56, 61, 83, 0.8);
+  border: 0px;
+  border-radius: 3px;
+  margin: 2px;
+  font-size: 16px;
+  padding: 13px 30px;
+  color: white;
+  cursor: pointer;
+  outline: none;
+}
+.image-link {
+  width: auto;
+  height: 700px;
+}
+.about {
+  background-image: url("./images/image.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: none;
+  height: 100vh;
+}
+.about-container {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  flex-direction: column;
+}
+.about-container h2 {
+  margin-top: 15%;
+}
+.after-banner {
+  margin: 10px auto;
+  display: grid;
+  max-width: 99%;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-column-gap: 1.5rem;
+  grid-row-gap: 1rem;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.image-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(56, 61, 83, 0.8);
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.image-decription {
+  position: absolute;
   display: flex;
-  flex-direction: column;
+  width: 100%;
+  background-color: rgba(228, 230, 238, 0.8);
+  flex-direction: row;
+  z-index: 99;
+  visibility: hidden;
+  bottom: 0px;
+  transition: all 1s ease-in-out;
+  height: 50px;
+  justify-content: space-around;
   align-items: center;
+  opacity: 50%;
+}
+.image-decription p {
+  opacity: 70%;
+}
+.image-container:hover .image-decription {
+  visibility: visible;
+  opacity: 100%;
+}
+.image-container:hover .image-decription p {
+  opacity: 100%;
+}
+.icon {
+  font-weight: 900;
+  margin: 0px 3px;
+}
+.search-header {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 10px;
+}
+.image-modal {
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+}
+.image-modal img {
+  display: block;
+  width: auto;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(56, 61, 83, 0.8);
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media only screen and (max-width: 600px) {
+  .image-modal {
+    display: grid;
+    grid-template-columns: 1fr;
   }
-  to {
-    transform: rotate(360deg);
+  .image-modal img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(56, 61, 83, 0.8);
   }
 }
